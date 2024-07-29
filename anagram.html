@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram</title>
+</head>
+<body>
+    <script>
+        function anagram(str1, str2) {
+            let obj = {};
+            for (let i = 0; i < str1.length; i++) {
+                if(!obj[str1[i]]){
+                    obj[str1[i]]=0
+                }
+                obj[str1[i]]++
+            }
+            for (let i = 0; i < str2.length; i++) {
+                if(!obj[str1[i]]){
+                    return false;
+                }
+                
+                    obj[str1[i]]--;
+            }
+            return true;
+        }
+        console.log(anagram('hello','eholl'));
+    </script>
+</body>
+</html>

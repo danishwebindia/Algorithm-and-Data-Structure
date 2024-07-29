@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack</title>
+</head>
+<body>
+    <script>
+        // Stack: A linear data structure in which the addition or removal of an element follows the particular order (Last in first out) or (First in last out)
+
+        let data = [];
+        let size=data.length;
+        let maxLength=5;
+        function addEl(x){
+            if(size===maxLength){
+                console.log(`Stack is already at maximum capacity. Element ${x} cannot be added`);
+                return
+            }
+            data[size]=x;
+            size++;
+        }
+
+        addEl(10)
+        addEl(20)
+        addEl(30)
+        addEl(40)
+        addEl(50)
+        addEl(60)
+
+        function removeEl(){
+            if(size==0){
+                console.log(`Stack is already empty.`);
+                return;
+            }
+            size = size-1;
+            data.length=size;
+        }
+        removeEl();
+        
+        console.log(data);
+    </script>
+</body>
+</html>

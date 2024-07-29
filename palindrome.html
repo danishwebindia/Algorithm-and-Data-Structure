@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome</title>
+  </head>
+  <body>
+    <script>
+      // Question 5. Write a function that checks if a given string is a palindrome.
+      function isPalindrome(str) {
+        // #1 Two pointers: Iterate the string both ends, and compare characters at each step.
+        const usingTwoPointers = () => {
+          let start = 0;
+          let end = str.length - 1;
+
+          while (end > start) {
+            if (str[start] !== str[end]) {
+              return false;
+            }
+            start++;
+            end--;
+          }
+          return true;
+        };
+
+        // #2 Reverse the string and compare it with the orignal string
+        const usingReverse = ()=>{
+            return str===str.split('').reverse().join('');
+        }
+
+        // #3 Recursively check first and last character match then move towords the center.
+        const usingRecursion = (str)=>{
+            if(str.length<=1){
+                return true
+            }
+            if(str[0]!==str[str.length-1]){
+                return false;
+            }
+            return usingRecursion(str.substring(1,str.length-1));
+        }
+
+        return {
+            palindromeUsingTwoPointers:usingTwoPointers,
+            palindromeUsingReverse:usingReverse,
+            palidromeUsingRecursion:usingRecursion,
+        }
+      }
+      const palindromeFn = isPalindrome('level');
+      console.log('Check String Palindrome Using Two Pointers', palindromeFn.palindromeUsingTwoPointers());
+      console.log('Check String Palindrome Using Reverse', palindromeFn.palindromeUsingReverse());
+      console.log('Check String Palindrome Using Recursion', palindromeFn.palidromeUsingRecursion('level'));
+    </script>
+  </body>
+</html>

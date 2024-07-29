@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Longest Word in the Scentence</title>
+  </head>
+  <body>
+    <script>
+      // Question 2. Write a function that finds the longest word in a sentence.
+
+      // #1 Longest word using
+
+      function longestWord(str) {
+        let longestWord = "";
+        let arr = str.split(" ");
+
+        // #1 Find longest String using For loop
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].length > longestWord.length) {
+            longestWord = arr[i];
+          }
+        }
+
+        // #2 Find longest String using Reduce
+
+        const longestWordReduce = arr.reduce(
+          (p, n) => (p.length > n.length ? p : n),
+          ""
+        );
+
+
+        // #3 Find longest String using Sort
+
+        const longestWordSort = arr.sort((a, b) => b.length - a.length)[0];
+        return {
+          longestWordUsingLoop: longestWord,
+          longestWordUsingReduce: longestWordReduce,
+          longestWordUsingSort: longestWordSort,
+        };
+      }
+
+      const longestWordFn = longestWord(
+        "The quick brown fox jumped over the lazy dog"
+      );
+      console.log(
+        "Longest word using Loop",
+        longestWordFn.longestWordUsingLoop
+      );
+      console.log(
+        "Longest word using Reduce",
+        longestWordFn.longestWordUsingReduce
+      );
+      console.log(
+        "Longest word using Sort",
+        longestWordFn.longestWordUsingSort
+      );
+    </script>
+  </body>
+</html>

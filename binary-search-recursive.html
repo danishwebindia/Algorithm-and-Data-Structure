@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Recursive Approach</title>
+</head>
+<body>
+    <script>
+        let arr = [10,12,15,20,25,27,29,35,38]
+        let start = 0;
+        let end = arr.length -1;
+        let find = 12;
+        function recursiveSearch(data,start,end){
+            let mid = Math.floor((start+end)/2);
+            if(data[mid]===find){
+                console.log(data[mid],mid);
+                return 
+            } else if (data[mid]<find){
+                recursiveSearch(data,mid+1,end)
+            } else {
+                recursiveSearch(data,start,end-1)
+            }
+        }
+        recursiveSearch(arr,start,end)
+    </script>
+</body>
+</html>

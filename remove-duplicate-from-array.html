@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Duplicate from Array</title>
+  </head>
+  <body>
+    <script>
+      // Question 3: Write a function that removes duplicates from an array.
+
+      function removeDuplicate(arr) {
+
+        // #1 Remove Duplicate from an Array using Filter 
+        const usingFilter = arr.filter(
+          (el, ind, self) => self.indexOf(el) == ind
+        );
+
+        // #2 Remove duplicates from an array using Set
+
+        const usingSet = [...new Set(arr)];
+
+        // #3 Remove duplicates from an array using foreach 
+
+        let uniqueArray = [];
+        arr.forEach((item)=>{
+            if(!uniqueArray.includes(item)){
+                uniqueArray.push(item);
+            }
+        })
+
+        // #4 Remove duplicates from an array using reduce
+
+        const usingReduce = arr.reduce((p,n)=>p.includes(n)?p:[...p,n],[]);
+        return {
+          removeDuplicateUsingFilter: usingFilter,
+          removeDuplicateUsingSet:usingSet,
+          removeDuplicateUsingForeach:uniqueArray,
+          removeDuplicateUsingReduce:usingReduce
+        };
+      }
+
+      const arr = [
+        3, 3, 2, 5, 4, 6, 7, 7, 5, 4, 9, 0, 2, 1, 10, 55, 35, 28, 29, 10, 5, 7,
+        3, 4, 8, 7,
+      ];
+      const removeDuplicateFn = removeDuplicate(arr);
+      console.log(
+        "Remove Duplicate From Array using Filter function",
+        removeDuplicateFn.removeDuplicateUsingFilter
+      );
+
+      console.log("Remove Duplicate from Array using Set", removeDuplicateFn.removeDuplicateUsingSet);
+      console.log("Remove Duplicate from Array using Foreach", removeDuplicateFn.removeDuplicateUsingForeach);
+      console.log("Remove Duplicate from Array using Reduce", removeDuplicateFn.removeDuplicateUsingReduce);
+    </script>
+  </body>
+</html>

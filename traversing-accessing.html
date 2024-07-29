@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traversing &amp; Accessing</title>
+  </head>
+  <body>
+    <input type="text" id="element" />
+    <button onclick="getInputValue()">Get value</button>
+    <script>
+      let arr = [2, 4, 1, 7, 5, 3, 9, 6];
+
+      // traverse: To access each element store in the Array
+
+      for (let i = 0; i < arr.length; i++) {
+        console.log(`Access each element store in the array ${arr[i]}`);
+      }
+
+      // access: To access the array element, use the index number of the required element
+
+      let x = 3;
+      console.log(`Access the required index of an array ${arr[x]}`);
+
+      // Example access the array element, use the index from input field and get value from button click and access required index from an array
+
+      function getInputValue() {
+
+        let index = document.getElementById("element").value;
+
+        if(/^\d+$/.test(index)==false){
+            console.log(`Enter numeric value only!`);
+            return;
+        }
+
+        if (index < arr.length) {
+
+          // access value in the array use the required index
+
+          console.log(arr[index]);
+        } else {
+          console.log(`Enter a number from 0-7`);
+        }
+      }
+    </script>
+  </body>
+</html>

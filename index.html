@@ -1,13 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algorithm and Data Structure</title>
-    
-</head>
-<body>
-    <script src="script.js" ></script>
-</body>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        list-style-type: none;
+      }
+
+      li {
+        padding: 15px;
+        border: 1px solid rgba(188, 130, 242, 0.8);
+      }
+      li a {
+        color: rgb(188, 130, 242);
+        text-decoration: none;
+      }
+      li a:hover {
+        color: rgb(126, 33, 212);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="traversing-accessing.html">Traversing &amp; Accessing</a>
+      </li>
+      <li>
+        <a href="insertion.html">Insertion</a>
+      </li>
+      <li>
+        <a href="deletion.html">Deletion</a>
+      </li>
+      <li>
+        <a href="linear-search.html">Linear Search</a>
+      </li>
+      <li>
+        <a href="merging.html">Merging Arrays</a>
+      </li>
+      <li>
+        <a href="bubble-sort.html">bubble Sort</a>
+      </li>
+      <li>
+        <a href="selection-sort.html">Selection Sort</a>
+      </li>
+      <li>
+        <a href="insertion-sort.html">Insertion Sort</a>
+      </li>
+      <li>
+        <a href="recursion.html">Recursion</a>
+      </li>
+      <li>
+        <a href="reverse-array-with-recursion.html">Reverse Array Recursion</a>
+      </li>
+      <li>
+        <a href="stack.html">Stack</a>
+      </li>
+      <li>
+        <a href="reverse-string-with-stack.html">Reverse String with Stack</a>
+      </li>
+      <li>
+        <a href="queue.html">Queue</a>
+      </li>
+      <li>
+        <a href="circular-queue.html">Circular Queue</a>
+      </li>
+      <li>
+        <a href="binary-search-iterative.html"
+          >Binary Search Iterative Approach</a
+        >
+      </li>
+      <li>
+        <a href="binary-search-recursive.html"
+          >Binary Search Recursive Approach</a
+        >
+      </li>
+      <li>
+        <a href="anagram.html">Anagram in Javascript</a>
+      </li>
+      <li>
+        <a href="palindrome.html">Palindrome</a>
+      </li>
+      <li>
+        <a href="max_occurring.html">Max Occrring Character</a>
+      </li>
+      <li><a href="map.html">Map in Javascript</a></li>
+      <li><a href="linked-list.html">Linked List</a></li>
+      <li><a href="javascript-questions.html">Javascript Questions</a></li>
+    </ul>
+    <!--<script src="script.js" ></script>-->
+    <script>
+      // Sum of Natural Numbers
+
+      /*         function sumOfNaturalNumbers(n){
+            let sum = 0;
+            sum = n*(n+1)/2;
+            return sum
+        }
+        console.log(sumOfNaturalNumbers(5));
+
+        // Sum of Digits
+
+        function sumOfDigits(n){
+            let sum = 0;
+            while(n>0){
+                sum+= n%10;
+                n = Math.floor(n/10)
+            }
+            return sum;
+        }
+        console.log(sumOfDigits(13487692));
+
+        // Number of Digits
+
+        function numberOfDigits(n){
+            n = Math.abs(n);
+            let count = 0;
+            do{
+                n = Math.floor(n/10);
+                count++;
+            }while(n>0)
+            return count;
+        }
+        console.log(numberOfDigits(1547));
+
+        // Palindrome
+
+        function palindrome (num){
+            let reverse=0;
+            let actualNum = num;
+            while(num>0){
+                let lastDigit = num%10;
+                reverse = reverse*10+lastDigit
+                num = Math.floor(num/10);
+            }
+            return reverse === actualNum
+        }
+        console.log(palindrome(1554));
+
+        // Fibonnacci numbers
+
+        function fibonnacci(num){
+            let n1 = num, prev=0, curr = 1, next;
+            if(num<2){
+                return num;
+            }
+            for(let i = 2; i <num;i++){
+                next = prev+curr;
+                prev = curr;
+                curr = next;
+            }
+            return next;
+        }
+        console.log(fibonnacci(5));
+
+        // Missing Number
+
+        function missingNumber(arr){
+            let sum =0;
+            for(let i=0;i<arr.length;i++){
+                sum+=arr[i];
+            }
+            return arr.length*(arr.length+1)/2 - sum
+        }
+
+        console.log(missingNumber([0,1,3]));
+
+        // primary number
+
+        function isPrime(num){
+            if(num<2){return false}
+            for(let i=2; i<=num;i++){
+                if(num%i==0){
+                    return false;
+                    break;
+                } else {
+                    return true;
+                }
+            }
+        }
+        console.log(isPrime(13)); */
+
+      // Largest number in Array
+
+      /* function largestNumber(arr){
+            return Math.max.apply(0,arr)
+        }
+        console.log(largestNumber([10,15,5,50,88,45,95,12,20,23,67])); */
+
+      /* function SecondLargestNumber(arr){
+            let max= Math.max.apply(0,arr);
+            let sMax=0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]<max && arr[i]>sMax){
+                    sMax=arr[i]
+                }
+            }
+            return sMax;
+        }
+        console.log(SecondLargestNumber([10,15,5,50,88,45,95,12,20,23,67])); */
+
+      /* function mergeSortedArray(arr1,arr2){
+            let result = [];
+            while(arr1.length && arr2.length){
+                const next = arr1[0]<arr2[0]?arr1.shift():arr2.shift();
+                result.push(next);
+            }
+            if(arr1.length){
+                result.concat(arr1)
+            } else {
+                result.concat(arr2)
+            }
+            return result
+        }
+
+        console.log(mergeSortedArray([1,5,6,8],[3,4,7,9])) */
+
+      /* function removeElement(arr,val){
+            let result=[];
+            for(let i=0; i<arr.length;i++){
+                arr[i]==val?'':result.push(arr[i])
+            }
+            return result;
+        }
+
+        console.log(removeElement([1,2,3,2,4,5,2,6,7,8,2],2)); */
+
+      /* function removeDuplicates(arr){
+            let index=0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]!==arr[index]){
+                    index++;
+                    arr[index]=arr[i]
+                }
+            }
+            return index+1;
+        }
+
+        let sortedArray = [1, 1, 2, 2, 3, 4, 4, 5];
+        let uniqueLength = removeDuplicates(sortedArray);
+
+        console.log(sortedArray.slice(0, uniqueLength));  */
+
+      /*  function removeDuplicates(arr){
+            let index=2;
+            for (let i = 2; i < arr.length; i++){
+                if(arr[i]!==arr[index-2]){
+                    
+                    arr[index]=arr[i];
+                    index++;
+                }
+            }
+            return index;
+        }
+
+        let sortedArray = [1, 1, 2, 2,2, 3, 4, 4, 5,5,5];
+        let uniqueLength = removeDuplicates(sortedArray);
+
+        console.log(sortedArray.slice(0, uniqueLength));  */
+
+      /* String Reverse */
+
+      const reverseStr = (str) => {
+        return str.split("").reverse().join("");
+      };
+
+      console.log(reverseStr("Hello World"));
+
+      const isPalindrome = (str) => {
+        return str === reverseStr(str);
+      };
+
+      console.log(isPalindrome("madam"));
+
+      const arr = [5, 3, 6, 2, 7, 9, 4];
+
+      console.log(Math.max.apply(0, arr));
+
+      const fibonacciSeq = (n) => {
+        let n1 = 0,
+          n2 = 1,
+          nextItem;
+        let fibArr = [0, 1];
+        for (let i = 2; i < n; i++) {
+          nextItem = n1 + n2;
+          fibArr.push(nextItem);
+          n1 = n2;
+          n2 = nextItem;
+        }
+        console.log(fibArr);
+      };
+
+      fibonacciSeq(5);
+
+      const sumDigit = (num) => {
+        let sum = 0;
+        for (let i = 0; i <= num; i++) {
+          sum += i;
+        }
+        return sum;
+      };
+
+      console.log(sumDigit(5));
+
+      const factroial = (num) => {
+        if (num == 1) {
+          return 1;
+        }
+        return num * factroial(num - 1);
+      };
+      console.log(factroial(5));
+
+      function rotateArr(arr1, k) {
+        let arr2 = arr1.splice(0, k + 1);
+        let arr3 = [...arr1, ...arr2];
+        return arr3;
+      }
+
+      console.log(rotateArr([1, 2, 3, 4, 5], 2));
+
+      /* Merge two sorted array */
+
+
+      let sortedArr1 = [1,4,6,8];
+      let sortedArr2 = [2,3,5,9];
+      const mergeArr = [];
+      function mergeSortedArray(arr1, arr2) {
+          for(let i = 0; i < arr1.length; i++){
+            if(arr1[i]>arr2[i]){
+              mergeArr.push(arr2[i],arr1[i])
+            } else {
+              mergeArr.push(arr1[i],arr2[i])
+            }
+          }
+          return mergeArr;
+      }
+
+      console.log(mergeSortedArray(sortedArr1, sortedArr2));
+    </script>
+  </body>
 </html>

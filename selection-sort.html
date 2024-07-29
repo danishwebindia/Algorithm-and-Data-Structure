@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+</head>
+<body>
+    <script>
+        let arr = [2,10,5,9,12,15,20,3,8,18]
+        function selectionSort(data) {
+            //let dataId;
+            for(let i = 0; i < data.length; i++){
+                let dataId = i;
+                for(let j=i+1;j < data.length; j++){
+                    
+                    if(data[j]<data[dataId]){
+                        dataId=j
+                    }
+                }
+                let temp = data[dataId];
+                data[dataId]=data[i];
+                data[i]=temp;
+            }
+        }
+        selectionSort(arr);
+        console.log(arr);
+    </script>
+</body>
+</html>

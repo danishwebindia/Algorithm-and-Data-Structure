@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resursion</title>
+</head>
+<body>
+    <script>
+
+       // Recursion: A process in which the function call itself indirectly or directly in order to solve the problem.
+
+         /* 2 type of recursion
+            1. Direct recursion
+            2. Indirect recursion */
+
+       // 1. Example Recurion direct 
+       // The type of recursion in which a function directly call itself within it's own block of code.
+
+       /*  function directRecursion(x){
+            if(x==0){
+                return 1;
+            }
+            return x* directRecursion(x-1);
+        }
+
+        console.log(directRecursion(5));
+
+        // 2. Example Recurion indirect
+        // The type of Recursion where a function call another function, which is turn calls the first function again.
+        let money = 100;
+        let totalApples=0;
+        function buyApple(x){
+            if(x>0){
+                console.log('remaining amount '+ x+ ' total apples '+totalApples);
+                buyMore(x)
+                
+            } else {
+                console.log('You do not have sufficient money!' + ' total apples ' + totalApples);
+            }
+            
+        }
+
+        function buyMore(x){
+            totalApples++;
+            buyApple(x-10)
+            
+        }
+
+        buyApple(money)
+
+        // Head recursion
+        // In head recursion, the action happens before further instructions
+
+        function headRecursion(x){
+            console.log(x);
+            if(x>0){
+                headRecursion(x-1);
+            }
+        }
+
+        headRecursion(5);
+
+        // Tail recursion
+        // In tail recursion, the action happens after all other instructions
+
+        function tailRecursion(x){
+            
+            if(x>0){
+                tailRecursion(x-1);
+            }
+            console.log(x);
+        }
+
+        tailRecursion(5); */
+
+
+        
+            const recursion = (n)=>{
+                if(n==1){
+                    return 1;
+                }
+                return  n+recursion(n-1);
+                
+            } 
+            console.log(recursion(5));
+        
+    </script>
+</body>
+</html>

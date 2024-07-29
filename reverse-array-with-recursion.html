@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revese Array with Recursion</title>
+  </head>
+  <body>
+    <script>
+      // In Reverse array recursion where recursively swap the elements of the array.
+
+      let arr = [10, 4, 15, 20, 55, 40, 34, 12, 50];
+
+      function reverseRecursion(data, start, end) {
+        if (start <= end) {
+          let temp = data[start];
+          data[start] = data[end];
+          data[end] = temp;
+          reverseRecursion(data, start + 1, end - 1);
+        }
+        return data;
+      }
+      console.log(reverseRecursion(arr, 0, arr.length - 1));
+    </script>
+  </body>
+</html>

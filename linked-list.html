@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linked List</title>
+  </head>
+  <body>
+    <script>
+      /*   class LinkedList {
+            constructor(data){
+                this.head = {
+                    value:data,
+                    next:null
+                }
+        
+                this.tail=this.head;
+                this.size=1;
+        }
+                appendNode(node){
+                    let newNode = {
+                        value:node,
+                        next:null
+                    }
+                    this.tail.next=newNode;
+                    this.tail=newNode;
+                    this.size++;
+                }
+
+                traversing(){
+                    let count=0;
+                    let currentNode=this.head;
+                    while(count<this.size){
+                        console.log(currentNode);
+                        currentNode=currentNode.next;
+                        count++;
+                    }
+                }
+            
+        }
+        let list = new LinkedList(100);
+        list.appendNode(200);
+        list.appendNode(300)
+        console.log(list);
+        list.traversing() */
+
+      /* function createNode(data) {
+        return {
+          value: data,
+          next: null,
+        };
+      }
+
+      function appendNode(list, node) {
+        let newNode = createNode(node);
+        list.tail.next = newNode;
+        list.tail = newNode;
+        list.size++;
+      }
+
+      function traverseList(list) {
+        let count = 0;
+        let currentNode = list.head;
+        while (count < list.size) {
+          console.log(currentNode);
+          currentNode = currentNode.next;
+          count++;
+        }
+      }
+
+      function createLinkedList(data) {
+        let headNode = createNode(data);
+        return {
+          head: headNode,
+          tail: headNode,
+          size: 1,
+        };
+      }
+
+      let list = createLinkedList(100);
+      appendNode(list, 200);
+      appendNode(list, 300);
+      console.log(list);
+      traverseList(list); */
+
+      function createLinkedList(data){
+        let node = createNode(data);
+        return {
+            head:node,
+            tail:node,
+            size:1
+        }
+      }
+      function createNode(data){
+        return {
+            val:data,
+            next:null
+        }
+      }
+      function appendNode(list, node){
+        let newNode = createNode(node);
+        list.tail.next=newNode;
+        list.tail=newNode;
+        list.size++;
+        return list;
+      }
+      function traversing(list){
+        let count=0;
+        let currentNode=list.head;
+        while(count<list.size){
+            console.log(currentNode);
+            currentNode=currentNode.next;
+            count++;
+        }
+      }
+
+      function deleteNode(index,list){
+        let lead = list.head;
+        let counter=1;
+        if(index===1){
+            lead=lead.next
+        } else {
+            while(counter<index-1){
+            lead=lead.next;
+            counter++;
+        }
+            let nextnode=lead.next.next;
+            lead.next=nextnode;
+            list.size--;
+        }
+        
+      }
+      let list = createLinkedList(100);
+      appendNode(list, 200)
+      appendNode(list, 300)
+      appendNode(list, 400)
+      appendNode(list, 500)
+      console.log(list);
+      deleteNode(3,list)
+      console.log(list);
+    </script>
+  </body>
+</html>

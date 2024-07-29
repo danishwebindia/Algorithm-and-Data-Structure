@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search</title>
+</head>
+<body>
+    <script>
+
+        let arr = [10,40, 30, 20, 50, 90, 80]
+        let searchEl = 80;
+        let index;
+
+        //Linear Search: Search algorithm where a sequential search is made over all items one by one.
+
+        for (let i=0; i < arr.length;i++){
+            if(arr[i]==searchEl){
+                index=i;
+                break;
+            }
+        }
+        console.log(index);
+
+        // JavaScript built-in function to achieve linear search
+
+        console.log(arr.indexOf(searchEl));
+    </script>
+</body>
+</html>

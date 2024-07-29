@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Questions</title>
+</head>
+<body>
+    <script>
+        // Question 1. Write a function that reverses a given string.
+
+
+        // #1 Reverse string using for loop 
+
+         function reverseStringUsingLoop(str){
+            let temp='';
+            for (let i = str.length-1; i >=0; i--) {
+                const el = str[i];
+                temp+=el;
+            }
+            return temp;
+        }
+        console.log(reverseStringUsingLoop('reverseStringUsingLoop'));
+
+
+
+
+
+
+        // #2 Reverse string using javascript in-built function
+
+         function reverseStringUsingInbuiltFunction(str){
+            return str.split('').reverse().join('');
+        }
+        console.log(reverseStringUsingInbuiltFunction('reverseStringUsingInbuiltFunction')); 
+
+
+
+
+
+
+        // #3 Reverse string using recursion
+
+         function reverseStringUsingRecursion(str){
+            if(str==''){
+                return ''
+            } else {
+                return reverseStringUsingRecursion(str.substr(1))+str.charAt(0);
+            }
+        }
+        console.log(reverseStringUsingRecursion('reverseStringUsingRecursion'));  
+
+
+
+
+
+
+
+        // #4 Reverse string using reduce function
+
+         function reverseStringUsingReduce(str) {
+            return str.split('').reduce((p,n)=>n+=p,'')
+        }
+
+        console.log(reverseStringUsingReduce('reverseStringUsingReduce')); 
+
+
+
+
+
+
+
+        // #5 Reverse string using spread operator
+
+         function reverseStringUsingSpreadOperator(str) {
+           return [...str].reverse().join('')
+        }
+
+        console.log(reverseStringUsingSpreadOperator('reverseStringUsingSpreadOperator')); 
+
+
+        
+    </script>
+</body>
+</html>

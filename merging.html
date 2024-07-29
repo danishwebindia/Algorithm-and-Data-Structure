@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merging Arrays</title>
+</head>
+<body>
+    <script>
+        // Merging Arrays: combine two arrays into one single array without sorting example
+        let arr1 = [2,5,8,9,10,15];
+        let arr2 = [3,4,6,7];
+        let arr3 = [];
+
+         for(let i = 0; i < arr1.length; i++){
+            arr3[i]=arr1[i];
+        }
+
+        for(let i = 0; i < arr2.length; i++){
+            arr3[arr1.length+i]=arr2[i];
+        }
+
+        console.log(arr3); 
+
+        // Merging arrays: combine two arrays in accending order into single array
+
+        let d1 = 0, d2 = 0, d3 = 0;
+
+        while(d1<arr1.length && d2<arr2.length){
+            if(arr1[d1]<arr2[d2]){
+                arr3[d3]=arr1[d1]
+                d1++
+            } else {
+                arr3[d3]=arr2[d2];
+                d2++
+            }
+                d3++
+        }
+
+        while(d1<arr1.length){
+            arr3[d3]=arr1[d1];
+            d3++
+            d1++
+        }
+        console.log(arr3);
+    </script>
+</body>
+</html>

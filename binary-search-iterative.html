@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Iterative approach</title>
+</head>
+<body>
+    <script>
+        let arr = [2,5,8,10,15,18,23,35,54,58,60,78,79,84,88];
+        let first=0;
+        let last = arr.length -1;
+        let find = 60;
+        while(first<=last){
+            let mid = Math.floor((first+last)/2);
+            if(arr[mid]==find){
+                console.log(arr[mid]);
+                break;
+            } else if(arr[mid]<find){
+                first=mid+1
+            } else {
+                last = mid-1;
+            }
+
+        }
+    </script>
+</body>
+</html>

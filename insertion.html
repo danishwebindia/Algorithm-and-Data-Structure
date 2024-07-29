@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion</title>
+</head>
+<body>
+    <script>
+
+        // Insertion: Insert one and more elements into the array
+
+        let arr = [10, 14, 20, 50, 30, 15, 9, 30];
+        let position = 4;
+        let newEl = 60;
+
+        for(let i = arr.length-1;i>=0;i--){
+            if(i>=position){
+                arr[i+1]=arr[i];
+            }
+            if (position==i){
+                arr[i] = newEl;
+            }
+        }
+        console.log(arr);
+
+        // Javascript built-in function to insert element from an array
+        
+        arr.splice(2,0,12);
+        console.log(arr);
+    </script>
+</body>
+</html>

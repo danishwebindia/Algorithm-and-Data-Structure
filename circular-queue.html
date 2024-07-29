@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Queue</title>
+</head>
+<body>
+    <script>
+        // Circular queue is a type of data structure that organizes elements in circular arrangement, allowing effiient operations like insertion and deletion. A circular track where you can add element at one end and remove them from the other end. when the last position is reached, it's wrap around the first position, forming a loop. The structure efficiently uses memory and allow for contant time complexity for basic operations, making it useful for scenrios where you need to manage a fixed-size collection of data with a FIFO approach.
+
+        class Queue {
+            constructor(size){
+                this.max=size;
+                this.data=[];
+                this.current=this.data.length;
+                this.first=0;
+                this.end=0;
+            }
+            enQueue(val){
+                if(this.max===this.end){
+                    return `Queue is already maximum capacity. Element ${val} cannot be added.`
+                }
+                
+                if(this.data.length>0){
+                    this.end++;
+                    this.data[this.end]=val;
+                }
+                if(this.data.length==0){
+                    this.data[this.first]=val;
+                    this.data[this.end]=val;
+                }
+            }
+            deQueue(){
+                
+            }
+        }
+        let queue = new Queue(5);
+        console.log(queue);
+    </script>
+</body>
+</html>

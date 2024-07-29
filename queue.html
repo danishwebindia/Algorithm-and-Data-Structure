@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queue</title>
+  </head>
+  <body>
+    <script>
+
+    // A linear data structure that consists of a collection is of items that follows first in first out sequence.
+
+      let data = [];
+      let size = data.length;
+      let max = 5;
+      function enQueue(val) {
+        if (size == max) {
+          console.log(
+            `Queue is already maximum capacity. Element ${val} cannot be added`
+          );
+          return;
+        }
+        data[size] = val;
+        size += 1;
+      }
+      function deQueue() {
+        if (!isEmpty()) {
+          for (let i = 0; i < data.length; i++) {
+            data[i] = data[i + 1];
+          }
+          size -= 1;
+          data.length = size;
+        }
+      }
+      function display() {
+        console.log(data);
+      }
+      function isEmpty() {
+        if (data.length === 0) {
+          console.log(`Queue is already empty`);
+          return true;
+        }
+      }
+      function front() {
+        if (!isEmpty()) {
+          return data[0];
+        }
+      }
+      function rear() {
+        if (!isEmpty()) {
+          return data[size - 1];
+        }
+      }
+    </script>
+  </body>
+</html>

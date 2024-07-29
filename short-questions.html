@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Questions</title>
+</head>
+<body>
+    <script>
+        // Questions #6 How to empty an array in JavaScript?
+
+        /* let arr = new Array();
+        console.log('Array define with new keyword ',arr);
+        arr.push('danish');
+       // arr.length=0;
+       // arr=[];
+        console.log(arr); */
+
+        // Question #7 How would you check if a number is an integer or decimal?
+
+        function isInteger(n){
+            // #1 with integer function 
+            const isIntegerFn =  Number.isInteger(n)
+
+            // #2 with modulo operator
+            const isIntegerModuloFn =  n%1==0;
+
+            // with parseInt method
+
+            const isIntegerParseIntFn = Number.parseInt(n)==n
+
+            return {
+                isIntegerWithIntegerMethod: isIntegerFn,
+                isIntegerWithModuloMethod: isIntegerModuloFn,
+                isIntegerWithParseIntMethod: isIntegerParseIntFn
+
+            }
+        }
+
+        const integerBoolean = isInteger(7.2)
+
+        console.log('Number is integer with integer method', integerBoolean.isIntegerWithIntegerMethod);
+
+        console.log('Number is integer with modulo operator', integerBoolean.isIntegerWithModuloMethod);
+
+        console.log('Number is integer with ParseInt operator', integerBoolean.isIntegerWithParseIntMethod);
+
+        // Question #8 What will be the output of `console.log(0 == '0')` in JavaScript and why?
+
+        console.log(0=='0');
+
+        /* Answer: In JavaScript, the == operator performs type coercion, meaning it tries to convert operands to the same type before comparing them. In the expression 0 == '0', the string '0' is coerced to a number, resulting in 0 == 0, which evaluates to true.
+
+        On the other hand, the === operator, known as the strict equality operator, compares both the value and the type without any type conversion. In the expression 0 === '0', since the types of operands are different (number and string), the result is false.
+
+        So, depending on whether we use == or ===, the comparison result differs. With ==, the comparison returns true because of type coercion, while with ===, the comparison returns false because it checks both value and type.
+        */
+
+        // Question #9 Explain the output of `console.log([] == ![])` and justify your answer.
+
+        console.log([]==![]); // true
+
+        // Question #10 Predict the output of `console.log('2' + 1)` and explain the result.
+
+        console.log('2' + 1); // 21
+
+        // Question #11 What will be printed to the console when `console.log(+'Infinity' - '5')` is executed?
+
+        console.log(+'Infinity' - '5') // Infinity
+        
+        // Question #12 Explain the output of `console.log(3 * 'foo')` and how JavaScript handles this operation.
+
+        console.log(3 * 'foo') // NaN
+
+        // Question #13 Predict the output of `console.log(typeof typeof 1)` and explain the reasoning behind it.
+
+        console.log(typeof typeof 1) // string
+
+        // Question #14 What will be logged to the console when `console.log([] + {})` is executed and why?
+
+        console.log([] + {}) // [Object Object]
+
+        // Question #15 Explain the output of `console.log('foo' instanceof String)` and its implications.
+
+        console.log('foo' instanceof String); // false
+
+        // Question #16 Predict the result of `console.log(Math.max())` and explain why it produces that output.
+
+        console.log(Math.max()) // -Infinity
+
+        // Question #17 What will be the output of `console.log(NaN === NaN)` and why does JavaScript behave this way?
+
+        console.log(NaN === NaN) // false
+
+        // Question #18 Explain the output of `console.log(typeof NaN)` and the reasoning behind it.
+
+        console.log(typeof NaN) // number
+
+        // Question #19 Predict the output of `console.log([] + [])` and explain how JavaScript handles array concatenation.
+
+        console.log([] + []) // ''
+
+        // Question #20 What will be logged to the console when `console.log(0.1 + 0.2 === 0.3)` is executed and why?
+
+        console.log(0.1 + 0.2 === 0.3); // false
+
+        // Question #21 Explain the output of `console.log('10' - - '5')` and the type coercion involved.
+
+        console.log('10' - -' 5'); // 15
+
+        // Question #22 Predict the output of `console.log(null + null)` and explain the result.
+
+        console.log(null + null); // 0
+
+        // Question #23 What will be printed to the console when `console.log([] == '')` is executed and why?
+
+        console.log([] == ''); // true
+
+    </script>
+</body>
+</html>
